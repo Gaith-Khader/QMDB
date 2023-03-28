@@ -1,0 +1,23 @@
+nav{
+    /* background-color: #0e1111; */
+    background-color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+    /* position: fixed !important;
+    width: 100%; */
+}
+a{
+    color: #fff !important;
+    transition: 0.4s !important;
+}
+a:hover{
+    color: #F5C518 !important;
+}
+.logo{
+    border-radius: 10px;
+}
+nav button{
+    background-color: #F5C518 !important;
+}
+

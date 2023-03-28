@@ -1,0 +1,30 @@
+.notBody{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.65),rgb(0,0,0,0.5)),url('../../.././public/images/HeaderBG.jpg');
+    background-size: cover;
+    height: 78.3vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.notErr{
+    font-size: 200px;
+    font-weight: 700;
+}
+.notTitle{
+    font-size: 50px;
+}
+.notBtn{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000 !important;
+    border-radius: 15px;
+    background-color: #F5C518;
+    padding: 8px 15px;
+    border: 5px solid #F5C518;
+}
+.notBtn:hover{
+    color: #fff !important;
+    background-color: #000;
+}

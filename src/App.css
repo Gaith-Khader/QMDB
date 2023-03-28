@@ -1,38 +1,485 @@
-.App {
-  text-align: center;
+/* ---------------------------- Public ---------------------------- */
+html, body, #fullHeight {
+    min-height: 100% !important;
+    height: 100%;
+}
+h2{
+  font-size: 28px;
+  font-weight: 500;  
+  color: var(--text-primary);
+}
+h3{
+  font-size: 28px;
+  color: var(--text-primary);
+}
+h4{
+  font-size: 16px;
+}
+.slick-prev:before, .slick-next:before{
+  color: var(--text-primary);
+  font-size: 30px;
+  position: absolute;
+  top: -15px;
+  left: -5px;
+}
+a{
+  text-decoration: none;
+}
+/* scroll */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0e1111;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--text-primary);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+/* ---------------------------- Public ---------------------------- */
+
+
+/* ---------------------------- Nav ---------------------------- */
+.fixedNAV{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+/* ---------------------------- Nav ---------------------------- */
+
+
+/* ---------------------------- header ---------------------------- */
+.header{
+  max-height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.headerInfo{
+  position: absolute;
+  bottom: 230px;
+  padding: 50px;
+}
+.header .headerTitle{
+  font-size: 50px;
+}
+.header .headerDate{
+  font-size: 20px;
+  padding-right: 20px;
+}
+.header .headerRate{
+  font-size: 20px;
+  padding-right: 20px;
+}
+.header .headerRate i{
+  margin-right: 10px;
+  color: var(--text-primary);
+}
+/* ---------------------------- header ---------------------------- */
+
+/* ---------------------------- Movie $ TV ---------------------------- */
+
+.span-btn{
+  color: #fff;
+  cursor: pointer;
+}
+.span-btn:hover{
+  color: var(--text-primary);
+}
+.title{
+  margin-bottom: 10px;
+}
+.poster{
+  width: 100%;
+  min-height: 100% !important;
+  height: 100%;
+}
+.card{
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+.card h3{
+  margin-bottom: 20px;
+  font-size: 18px !important;
+}
+.card .details{
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  bottom: -150px;
+  padding: 20px;
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  transition: .4s;
+}
+.card:hover .details{
+  bottom: 0;
+}
+.rate i{
+  color: var(--text-primary);
+  margin-right: 3px;
+}
+.card .button{
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+  padding: 8px 15px;
+  margin: auto;
+  font-size: 18px;
+  transition: .4s;
+}
+.card .button:hover{
+  background-color: var(--text-primary);
+  color: #fff !important;
+}
+/* ---------------------------- Public ---------------------------- */
+
+
+
+/* ---------------------------- CATS ---------------------------- */
+.catNames{
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: #000 !important;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--text-primary) !important;
+  border: 1px solid #F5C518;
+}
+.catNames:hover{
+  color: #fff !important;
+  background-color: #000 !important;
+}
+.catName:hover{
+  color: #fff !important;
+}
+/* ---------------------------- CATS ---------------------------- */
+
+
+
+
+/* ---------------------------- Details ---------------------------- */
+/* MOVIE DETAILS */
+.full-back{
+  background-position: center !important;
+  background-size: cover !important;
+  height: 50%;
+  border-bottom: 5px solid #000;
+  background-repeat: no-repeat !important;
+}
+.space{
+  color: var(--text-primary);
+}
+.left-side img{
+  border-radius: 10px;
+}
+.poster-image {
+  border-radius: 10px;
+}
+.right-side{
+  padding: 0px 20px;
+}
+.right-side .movie-tagline{
+  font-size: 20px;
+}
+.right-side .movie-lang{
+  text-transform: uppercase;
+  position: relative;
+}
+.react-player{
+  margin: auto;
+}
+.right-side .movie-status{
+  color: var(--text-primary);
+  margin-left: 10px;
+}
+.right-side .movie-overview-title{
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 30px 0 10px 0;
+}
+.right-side .movie-overview{
+  font-size: 18px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.right-side .vote-max{
+  font-weight: 700;
+}
+.right-side .movie-vote-average i{
+  color: var(--text-primary);
+  margin-right: 6px;
+}
+.genres-list{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+.genres-list li{
+  margin-right: 10px;
+  border: 2px solid var(--text-primary);
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+/* show details - seasons */
+
+.seasons{
+  color: #fff !important;
+}
+.season{
+  border: 2px solid var(--text-primary);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.season-poster{
+  border-radius: 10px;
+}
+.season-title{
+  font-size: 20px;
+  margin-top: 10px;
+}
+.season-ep{
+  margin: 15px 0;
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+/* actors */
+.poster-actor{
+    width: 100%;
+    min-height: 100% !important;
+    height: 100%;
+    border-radius: 10px;
+}
+.cast-card img{
+  width: 100%;
+  border-radius: 10px;
+}
+.cast-card{
+  position: relative;
+}
+.cast-card h6{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 18px;
+  padding: 20px 0;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* ACTOR DETAILS */
+.act-left-side{
+  margin-top: 20px;
+}
+.act-right-side{
+  color: #ffffff;
+  padding: 20px;
+}
+.act-right-side .actor-overview-title{
+  font-size: 24px;
+  color: var(--text-primary);
+  margin: 30px 0 10px 0;
+}
+.act-right-side .actor-overview{
+  font-size: 15px;
+  text-align: justify;
+}
+.act-right-side .actor-vote-average i{
+  color: var(--text-primary);
+  margin-right: 6px;
+}
+.actor-bg{
+  background:  linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.8), rgba(0,0,0,.6)),url(../public/images/Actor-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* ---------------------------- Details ---------------------------- */
+
+/* search */
+.search-field{
+  width: 80%;
+  height: 50px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border: #F5C518 3px solid !important;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+.search-btn{
+  text-align: center;
+  height: 50px;
+  width: 20%;
+  padding: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: #F5C518;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000 !important;
+  border: none;
+}
+.search-field:focus{
+  padding: 10px;
+  border: none !important;
+  outline-offset: -3px;
+  outline: 3px solid var(--text-primary);
+}
+
+
+.err-search{
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: 50px;
+}
+
+
+
+
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
+
+/* smartphones - small */
+@media (max-width:576px){
+  .headerInfo{
+    position: absolute;
+    bottom: 180px;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .header .headerTitle{
+    font-size: 24px;
   }
+  .card .details{
+    bottom: -600px;
+    height: 100%;
+  }
+  .card__description {
+    display: none;
+  }
+}
+/* tablets - medium */
+@media (min-width:576px) and (max-width:992px){
+  .headerInfo{
+    position: absolute;
+    bottom: 250px;
+    padding: 30px;
+  }
+  .header .headerTitle{
+    font-size: 32px;
+  }
+  .card .details{
+    bottom: -500px;
+    height: 100%;
+  }
+  .poster-image{
+    margin-top: 25px;
+  }
+  .left-side{
+    padding: 50px 0;
+  }
+  .card__description {
+    display: none;
+  }
+}
+
+
+
+
+
+
+.cards {
+  display: inline-block;
+  transition: transform .2s;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  cursor:pointer;
+  z-index:0;
+  color: #fff;
+  width: 100%;
+  height: 97%;
+
+}
+
+.cards:hover {
+  transform: scale(1.1);
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border: 3px solid var(--text-primary);
+}
+
+.cards__img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.cards__overlay {
+  position: absolute;
+  padding: 15px;
+  bottom: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+  opacity: 0;
+  transition: opacity .2s;
+}   
+
+.cards__overlay:hover {
+  opacity: 1;
+}
+
+.card__title {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+}
+
+
+.card__runtime {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.card__rating i{
+  color: var(--text-primary);
+}
+
+
+.card__description {
+  font-size: 15px;
+  margin-bottom: 5px;
 }

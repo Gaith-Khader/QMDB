@@ -1,0 +1,43 @@
+.left{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.65),rgb(0,0,0,0.5)),url('../../.././public/images/TV-SHOWS.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 520px;
+    position: relative;
+    border: #0F0C0F 4px solid;
+}
+.right{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.65),rgb(0,0,0,0.5)),url('../../.././public/images/Movies.jpg');
+    background-size: cover;
+    height: 520px;
+    position: relative;
+    border: #0F0C0F 4px solid;
+}
+.main h2{
+    font-size: 40px !important;
+    font-weight: 700 !important;
+}
+.button{
+    border: 3px solid #f5c518;
+    padding: 10px;
+    border-radius: 0px;
+    font-size: 22px;
+    font-weight: 700;
+    transition: .4s;
+}
+.button:hover{
+    background-color: #f5c518;
+    color: #fff !important;
+}
+
+/* smartphones - small */
+@media (max-width:576px){}
+
+/* tablets - medium */
+@media (min-width:576px) and (max-width:992px){
+
+}
+
+/* macbook and other - large */
+@media (min-width:992px) and (max-width:1280px){}
+
