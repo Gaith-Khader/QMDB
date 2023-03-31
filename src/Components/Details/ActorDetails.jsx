@@ -129,49 +129,49 @@ function ActorDetails() {
             <div className="container">
                 <h3 className='rec-title mt-5 mb-3'>Known for</h3>
                 <Slider {...settings}>
-                    {workM.map((tv) =>
-                        <div key={tv.id} className="col-md-3 p-1">
-                            <div className="card" id="fullHeight">
-                                <img
-                                    src={`https://image.tmdb.org/t/p/original${tv.poster_path}`}
-                                    className="poster" alt={tv.title}
+                    {workM.map((movie) =>
+                        <div key = { movie.id } >
+                        <Link to={`/movie/${movie.id}`}>
+                            <div className="cards-carousel">
+                                <img className="cards-img-carousel" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title}
                                     onError={event => {
-                                        event.target.src = "https://www.zwatch.org/no-poster.png"
+                                        event.target.src = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
                                         event.onerror = null
-                                    }}
-                                />
-                                <div className="details">
-                                    <div className={`d-flex justify-content-between`}>
-                                        <h4>{tv.title}</h4>
-                                        <span className="rate"><i className="fa-solid fa-star"></i>{tv.vote_average}</span>
+                                    }} />
+                                <div className="cards__overlay">
+                                    <div className="card__title">{movie.title}</div>
+                                    <div className="card__runtime d-flex justify-content-between">
+                                        {movie.release_date}
+                                        <span className="card__rating"><i className="fas fa-star" /> {movie.vote_average}</span>
                                     </div>
-                                    <Link to={`/movie/${tv.id}`} className="button">Details</Link>
+                                    <div className="card__description">{movie.overview.slice(0, 118)}</div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
+                    </div>
                     )}
                 </Slider>
                 <Slider {...settings}>
                     {workT.map((tv) =>
-                        <div key={tv.id} className="col-md-3 p-1">
-                            <div className="card">
-                                <img
-                                    src={`https://image.tmdb.org/t/p/original${tv.poster_path}`}
-                                    className="poster" alt={tv.title}
+                        <div key={tv.id}>
+                        <Link to={`/tv/${tv.id}`}>
+                            <div className="cards-carousel">
+                                <img className="cards-img-carousel" src={`https://image.tmdb.org/t/p/original${tv.poster_path}`} alt={tv.title}
                                     onError={event => {
                                         event.target.src = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
                                         event.onerror = null
-                                    }}
-                                />
-                                <div className="details">
-                                    <div className={`d-flex justify-content-between`}>
-                                        <h4>{tv.name}</h4>
-                                        <span className="rate"><i className="fa-solid fa-star"></i>{tv.vote_average}</span>
+                                    }} />
+                                <div className="cards__overlay">
+                                    <div className="card__title">{tv.name}</div>
+                                    <div className="card__runtime d-flex justify-content-between">
+                                        {tv.release_date}
+                                        <span className="card__rating"><i className="fas fa-star" /> {tv.vote_average}</span>
                                     </div>
-                                    <Link to={`/tv/${tv.id}`} className="button">Details</Link>
+                                    <div className="card__description">{tv.overview.slice(0, 118)}</div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
+                    </div>
                     )}
                 </Slider>
             </div>

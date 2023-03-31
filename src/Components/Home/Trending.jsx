@@ -70,23 +70,24 @@ function Trending() {
             <div className="row">
                 <Slider {...settings}>
                     {shows.map((show) =>
-                        <div key={show.id} className='col-md-3 p-1'>
-                            <div className="card" id="fullHeight">
-                                <img
-                                    src={`https://image.tmdb.org/t/p/original${show.poster_path}`} className="poster" alt={show.title}
-                                    onError={event => {
-                                        event.target.src = "https://www.zwatch.org/no-poster.png"
-                                        event.onerror = null
-                                    }}
-                                />
-                                <div className="details">
-                                    <div className={`d-flex justify-content-between`}>
-                                        <h4>{show.title || show.name}</h4>
-                                        <span className="rate"><i className="fa-solid fa-star"></i>{show.vote_average}</span>
+                        <div key={show.id}>
+                            <Link to={`/tv/${show.id}`}>
+                                <div className="cards-carousel">
+                                    <img className="cards-img-carousel" src={`https://image.tmdb.org/t/p/original${show.poster_path}`} alt="movie.title"
+                                        onError={event => {
+                                            event.target.src = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
+                                            event.onerror = null
+                                        }} />
+                                    <div className="cards__overlay">
+                                        <div className="card__title">{show.name}</div>
+                                        <div className="card__runtime d-flex justify-content-between">
+                                            {show.release_date}
+                                            <span className="card__rating"><i className="fas fa-star" /> {show.vote_average}</span>
+                                        </div>
+                                        <div className="card__description">{show.overview.slice(0, 118)}</div>
                                     </div>
-                                    <Link onClick={backToTop} to={`/tv/${show.id}` || `/tv/${show.id}`} className="button">Details</Link>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     )}
                 </Slider>

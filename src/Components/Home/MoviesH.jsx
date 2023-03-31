@@ -60,30 +60,31 @@ function MoviesH() {
         getMovies();
     }, [])
 
-    
+
     return (
         <div className='my-5'>
             <h3 className="title">Trending Movies</h3>
             <div className="row">
                 <Slider {...settings}>
                     {movies.map((movie) =>
-                        <div key={movie.id} className="col-md-3 p-1">
-                            <div className="card" id="fullHeight">
-                                <img
-                                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="poster" alt={movie.title}
-                                    onError={event => {
-                                        event.target.src = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
-                                        event.onerror = null
-                                    }}
-                                />
-                                <div className="details">
-                                    <div className={`d-flex justify-content-between`}>
-                                        <h4>{movie.title}</h4>
-                                        <span className="rate"><i className="fa-solid fa-star"></i>{movie.vote_average}</span>
+                        <div key={movie.id}>
+                            <Link to={`/movie/${movie.id}`}>
+                                <div className="cards-carousel">
+                                    <img className="cards-img-carousel" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title}
+                                        onError={event => {
+                                            event.target.src = "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg"
+                                            event.onerror = null
+                                        }} />
+                                    <div className="cards__overlay">
+                                        <div className="card__title">{movie.title}</div>
+                                        <div className="card__runtime d-flex justify-content-between">
+                                            {movie.release_date}
+                                            <span className="card__rating"><i className="fas fa-star" /> {movie.vote_average}</span>
+                                        </div>
+                                        <div className="card__description">{movie.overview.slice(0, 118)}</div>
                                     </div>
-                                    <Link to={`/movie/${movie.id}`} className="button">Details</Link>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     )}
                 </Slider>
